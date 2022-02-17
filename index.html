@@ -14,7 +14,41 @@
 </head>
 
 <body>
-    <h1>Money Expenses And Savings</h1>
+    <h1 class="text-center text-success">Money Expenses And Savings</h1>
+
+    <section class="contianer-fluid mt-5">
+        <div class="row">
+            <!-- image area -->
+            <div class="col-md-7">
+                <img class="img-fluid" src="images/money-image.jpg" alt="">
+            </div>
+
+            <!-- calculation area -->
+            <div class="col-md-5">
+                <form>
+                    <h4 class="text-center">Income</h4>
+                    <label for="">Income:<input type="text"></label><br>
+
+                    <h4 class="text-center">Expenses</h4>
+                    <label>Food:<input type="text"></label><br>
+                    <label>Rent:<input type="text"></label><br>
+                    <label>Clothes:<input type="text"></label><br>
+                    <button id="calculate-btn" class="btn btn-primary">Calculate</button>
+                    <div class="calculate-expense">
+                        <p>Total Expense: <span>00</span></p>
+                        <p>Balance: <span>00</span></p>
+                    </div>
+
+                    <div><label>Save: <input type="text"> % <button class="btn btn-primary">Save</button></label></div>
+                    <div class="calculate-expense">
+                        <p>Saving Amount: <span>00</span></p>
+                        <p>Remaining Balance: <span>00</span></p>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
 
     <!-- externel js -->
     <script src="js/index.js"></script>
