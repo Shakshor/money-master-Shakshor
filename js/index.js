@@ -1,14 +1,16 @@
+//get the input value
 function getInput(inputId) {
-    const incomeInput = document.getElementById(inputId).value;
-    const incomeAmount = parseFloat(incomeInput);
-    if (incomeAmount > 0) {
-        return incomeAmount;
+    const balanceInput = document.getElementById(inputId).value;
+    const balanceInputAmount = parseFloat(balanceInput);
+    if (balanceInputAmount > 0) {
+        return balanceInputAmount;
     }
     else {
         alert('Please enter a valid number');
     }
 };
 
+// calculate the expense and current balance
 function calculateExpense(isSave) {
     const totalIncome = getInput('income');
     const foodExpense = getInput('food');
@@ -17,10 +19,11 @@ function calculateExpense(isSave) {
     const totalExpense = foodExpense + rentExpense + clothesExpense;
     const currentBalance = totalIncome - totalExpense;
     if (totalExpense > totalIncome) {
-        alert('Not enough Balance');
+        alert('Not enough Balance for expense');
     }
     else if (totalExpense > 0) {
         if (isSave == false) {
+            //update the balance expense
             document.getElementById('total-expense').innerText = totalExpense;
             document.getElementById('current-balance').innerText = currentBalance;
         }
@@ -39,6 +42,7 @@ function totalCalculation(isSave) {
     else {
         const currentBalance = calculateExpense(true);
 
+        //calculate the saving amount and remaining balance
         const percentageRate = getInput('save-rate');
         const percentageAmount = percentageRate / 100;
         const totalIncome = getInput('income');
@@ -46,9 +50,10 @@ function totalCalculation(isSave) {
         const remainingBalance = currentBalance - savingAmount;
 
         if (savingAmount > currentBalance) {
-            alert('Not enough balance');
+            alert('Not enough balance for savings');
         }
         else if (savingAmount > 0) {
+            //update the savings
             document.getElementById('saving-amount').innerText = savingAmount;
             document.getElementById('remain-balance').innerText = remainingBalance;
         }

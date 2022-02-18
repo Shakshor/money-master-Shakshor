@@ -5,13 +5,12 @@
 
 /* calculation area */
 form{
-    margin: 0 auto;
     background-color: rgb(238, 235, 235);
     padding: 5px 120px;
 }
 label{
     width: 430px;
-    display: block;
+    display: inline-block;
     margin: 10px 5px;
 }
 input{
@@ -20,6 +19,7 @@ input{
     border: none;
     border-radius: 4px;
     height: 30px;
+    margin-top: 10px;
     margin-left: 10px;
 }
 #calculate-btn{
@@ -33,4 +33,45 @@ input{
 .calculate-expense p{
     font-size: 16px;
     font-weight: bold;
+}
+
+#save-rate{
+    width: 165px;
+    margin-right: 10px;
+}
+#save-btn{
+    width: 90px;
+    margin-left: 10px;
+}
+
+/*---------- Media Query --------*/
+/*---------- mobile device -------*/
+@media only screen and (max-width: 576px) {
+    h1{
+        margin: 0 10px;
+    }
+    .equal-height{
+        height: 45vh;
+    }
+
+    /*--------- calculation area ---------*/
+    form{
+        padding: 0;
+    }
+    #calculate-btn{
+        margin-left: 100px;
+    }
+    .calculate-expense{
+        padding-left: 100px;
+    }
+
+    /* ------- saving area -------- */
+    #save-rate{
+        width: 165px;
+        margin-right: 10px;
+    }
+    #save-btn{
+        width: 90px;
+        margin-left: 10px;
+    }
 }
